@@ -1,0 +1,426 @@
+@font-face {
+    font-family: vamp;
+    src: url(./NeueHaasDisplayMediu.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: vamp;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.main {
+    /* min-height: 100vh; */
+    background-color: #EFEAE3;
+    padding: 2.5vw 2vw;
+    overflow-x: hidden;
+    /* border: 4px solid green; */
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding-bottom: 5vh; */
+    /* border: 2px solid red; */
+}
+
+.navRight {
+    display: flex;
+    position: relative;
+    gap: 1vw;
+    padding: 0;
+}
+
+.navRight h4 {
+    padding: 12px 15px;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    border: 1px solid #5150509e;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.navRight h4 a {
+    text-decoration: none;
+    color: #000000cf;
+}
+
+.navRight .menuBtn {
+    right: 2vw;
+    display: none;
+}
+
+.navRight h4::after {
+    content: '';
+    position: absolute;
+    background-color: #000000;
+    height: 100%;
+    border-radius: 50%;
+    width: 100%;
+    left: 0;
+    bottom: -100%;
+    z-index: -1;
+    transition: all 0.3s linear;
+}
+
+.navRight h4:hover::after {
+    bottom: 0;
+    border-radius: 0%;
+}
+
+.navRight h4:hover {
+    cursor: pointer;
+}
+
+.navRight h4:hover a {
+    color: #F4F4F4;
+}
+
+/* NAVBAR DONE  */
+
+#mainText {
+    /* max-height: 69vh; */
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid #BFBBB6;
+    padding: 9vw 0 2.5vw 0;
+    /* border: 2px solid black */
+}
+
+#mainText h4 {
+    max-width: 33vw;
+    font-weight: 700;
+    line-height: 2.3vw;
+    font-size: 2.4vw;
+    /* border: 1px solid green; */
+}
+
+#mainText h1 {
+    font-size: 12vw;
+    text-align: right;
+    line-height: 9.7vw;
+    /* border: 1px solid black */
+}
+
+/* MAIN TEXT DONE */
+.vdoArea {
+    padding-top: 3vw;
+    /* border: 2px solid blue; */
+}
+
+.vdoArea video {
+    width: 100%;
+    position: relative;
+    border-radius: 25px;
+}
+
+/* Moving Sun !!!!! */
+.movingSun {
+    position: relative;
+    /* width: 100%; */
+    /* height: 10vh; */
+    /* background-color: gray; */
+}
+
+.movingSun-1,
+.movingSun-2,
+.movingSun-3 {
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    background: linear-gradient(#FE320A, #fe3f0a);
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    filter: blur(25px);
+    transform-origin: center;
+    /* It makes it rotate about its center */
+}
+
+.movingSun-1 {
+    animation: anime1 4.5s linear infinite alternate;
+}
+
+.movingSun-2 {
+    animation: anime2 6s linear infinite alternate;
+}
+
+.movingSun-3 {
+    animation: anime3 7s linear infinite alternate;
+}
+
+@keyframes anime1 {
+    from {
+        transform: translate(-50%, -15%) rotate(0);
+    }
+
+    to {
+        transform: translate(-40%, -26%) rotate(360deg);
+    }
+}
+
+
+@keyframes anime2 {
+    from {
+        transform: translate(-12%, -20%) rotate(0);
+    }
+
+    to {
+        transform: translate(0%, -23%) rotate(360deg);
+    }
+}
+
+@keyframes anime3 {
+    from {
+        transform: translate(28%, -20%) rotate(0);
+    }
+
+    to {
+        transform: translate(45%, -24%) rotate(360deg);
+    }
+}
+
+/* SECOND BOX SECTION BEGINS */
+.secondSection {
+    /* min-height: 100vh; */
+    overflow-x: hidden;
+    /* border: 2px solid red; */
+    width: 100%;
+    padding: 7vw 0 5vw 0;
+    background-color: #EFEAE3;
+    /* border-bottom: 2px solid green; */
+    /* border-top: 2px solid green; */
+    white-space: nowrap;
+    /* Is white-space se hoga ye ki iske items agar inline-block/inline ho to wo sb ek hi line me aa jayenge chahe wo overflow kre! */
+}
+
+.movingAnimation {
+    overflow-x: auto;
+    /* Overflow X dene se pura page pe scroll effect nhi aayega bs iss particular div pe hi aayega, yaani ki scroll hoga (ye div) but jo item iske area ke bhaar honge wo dikhenge nhi  */
+    /* border: 2px solid red; */
+}
+
+.movingAnimation::-webkit-scrollbar {
+    display: none;
+    /* isse hoga ye ki jo scroll bar ka line aa rha tha us box ke just neeche wo nhi dikhega ab, and scrolling waise hi hota rhega */
+}
+
+.movingClass {
+    white-space: nowrap;
+    display: inline-block;
+    animation: moveAnimation 12s linear infinite;
+}
+
+@keyframes moveAnimation {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+.movingText {
+    display: inline-block;
+    font-size: 8vw;
+    /* margin-right: 2.5vw; */
+}
+
+.gola {
+    display: inline-block;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    background-color: #fe3f0a;
+    margin: 0 2.5vw;
+}
+
+/* THIRD BOX  */
+.thirdSection {
+    width: 100%;
+    max-height: 95vh;
+    padding: 6vw 5.5vw 1vw 5.5vw;
+    display: flex;
+    background-color: #EFEAE3;
+    border-bottom: 1px solid #EFEAE3;
+    /* border: 2px solid red; */
+}
+
+.thirdSection .leftText {
+    max-width: 60%;
+    font-size: 4vw;
+    line-height: 4vw;
+    font-weight: 800;
+    /* border: 2px solid green; */
+}
+
+.thirdSection .rightBox {
+    flex-grow: 1;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    row-gap: 3vw;
+    /* border: 1px solid green; */
+}
+
+.thirdSection .rightBox img {
+    width: 60%;
+    border-radius: 20px;
+}
+
+.thirdSection .rightBox h4 {
+    font-weight: lighter;
+    width: 60%;
+    font-size: 1.2vw;
+    color: #4a4948;
+}
+
+/* FEATURED PROJECT TEXT AREA */
+.featuredProjText {
+    width: 100%;
+    padding: 0 2vw 6vw 2vw;
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    background-color: #EFEAE3;
+    /* border: 1px solid green; */
+}
+
+.featuredProjText #gola {
+    width: 0.7vw;
+    height: 0.7vw;
+    background-color: #FE320A;
+    border-radius: 50%;
+}
+
+.featuredProjText .text {
+    font-weight: lighter;
+    font-size: 1.5vw;
+    color: #585656;
+}
+
+/* FOURTH BOX BEGINS */
+
+
+/* MEDIA QUERYIES */
+/* RESPONSIVE DONE UPTO FeaturedRroject class div */
+@media (max-width:525px) {
+    .navRight .options {
+        display: none;
+    }
+
+    .navRight .menuBtn {
+        display: inline-block;
+    }
+
+}
+
+@media(max-width:767px) {
+    #mainText {
+        flex-direction: column-reverse;
+        width: 100%;
+        /* background-color: red; */
+    }
+
+    #mainText h4 {
+        align-self: flex-start;
+        max-width: 36vw;
+        font-size: 2.5vw;
+        /* border: 2px solid black */
+    }
+
+    .thirdSection {
+        flex-direction: column;
+        row-gap: 4vw;
+        align-items: center;
+        /* border: 2px solid black; */
+    }
+
+    .thirdSection .leftText {
+        min-width: 100%;
+        font-size: 5vw;
+        line-height: 5vw;
+        text-align: center;
+        /* border: 2px solid green; */
+    }
+
+    .thirdSection .rightBox {
+        width: 100%;
+        column-gap: 3vw;
+        flex-direction: row;
+        align-items: center;
+        /* border: 1px solid red; */
+    }
+
+    .thirdSection .rightBox img {
+        max-width: 50%;
+    }
+
+    .thirdSection .rightBox h4 {
+        font-size: 2.5vw;
+        /* border: 1px solid black; */
+    }
+
+    .featuredProjText {
+        padding-top: 2vw
+    }
+}
+
+
+@media (min-width: 1441px) and (max-width: 2000px) {
+    #mainText {
+        padding-bottom: 8vh;
+        /* padding-top: 5vh; */
+    }
+
+    @keyframes anime1 {
+        from {
+            transform: translate(-50%, -15%) rotate(0);
+        }
+
+        to {
+            transform: translate(-40%, -30%) rotate(360deg);
+        }
+    }
+
+    @keyframes anime2 {
+        from {
+            transform: translate(-12%, -20%) rotate(0)
+        }
+
+        to {
+            transform: translate(0%, -27%) rotate(360deg);
+        }
+    }
+
+    @keyframes anime3 {
+        from {
+            transform: translate(28%, -20%) rotate(0);
+        }
+
+        to {
+            transform: translate(45%, -28%) rotate(360deg);
+        }
+    }
+
+    .thirdSection {
+        padding-top: 5vw;
+    }
+}
